@@ -6,25 +6,25 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-public class TextFragment extends Fragment {
+public class ImageFragment extends Fragment {
 
-    private static String ARG_TEXT = "ARG_TEXT";
-    private String content;
+    private static String ARG_IMAGE_RESOURCE = "ARG_IMAGE_RESOURCE";
+    private int imageRes;
 
-    public static TextFragment newInstance(String text) {
-        TextFragment textFragment = new TextFragment();
+    public static ImageFragment newInstance(int imageRes) {
+        ImageFragment imageFragment = new ImageFragment();
         Bundle bundle = new Bundle();
-        bundle.putString(ARG_TEXT, text);
-        textFragment.setArguments(bundle);
-        return textFragment;
+        bundle.putInt(ARG_IMAGE_RESOURCE, imageRes);
+        imageFragment.setArguments(bundle);
+        return imageFragment;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        content = getArguments().getString(ARG_TEXT, null);
+        imageRes = getArguments().getInt(ARG_IMAGE_RESOURCE);
     }
 
     @Nullable
@@ -33,8 +33,8 @@ public class TextFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_text, container, false);
 
-        TextView contentText = (TextView) fragmentView.findViewById(R.id.text_content);
-        contentText.setText(content);
+        ImageView iconImage = (ImageView) fragmentView.findViewById(R.id.image_icon);
+        iconImage.setImageResource(imageRes);
 
         return fragmentView;
     }
