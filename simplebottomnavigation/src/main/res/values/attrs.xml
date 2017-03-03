@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="SimpleBottomNavigationView">
+        <!-- Whether the bottom navigation view should show a shadow above it -->
+        <attr name="showShadow" format="boolean" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SimpleBottomNavigation</string>
+
+    <string name="menu_one">One</string>
+    <string name="menu_two">Two</string>
+    <string name="menu_three">Three</string>
+</resources>
