@@ -49,11 +49,11 @@ public class SimpleBottomNavigationView extends BottomNavigationView {
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
 
-        Rect newRect = canvas.getClipBounds();
-        newRect.inset(0, (int) -topPadding);
-        canvas.clipRect(newRect, Region.Op.REPLACE);
-
         if (shadowDrawable != null) {
+            Rect newRect = canvas.getClipBounds();
+            newRect.inset(0, (int) -topPadding);
+            canvas.clipRect(newRect, Region.Op.REPLACE);
+
             shadowDrawable.setBounds(0, (int) (0 - topPadding), getRight(), 0);
             shadowDrawable.draw(canvas);
         }
