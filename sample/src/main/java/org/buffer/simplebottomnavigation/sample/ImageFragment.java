@@ -31,7 +31,7 @@ public class ImageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.fragment_text, container, false);
+        View fragmentView = inflater.inflate(R.layout.fragment_image, container, false);
 
         ImageView iconImage = (ImageView) fragmentView.findViewById(R.id.image_icon);
         iconImage.setImageResource(imageRes);

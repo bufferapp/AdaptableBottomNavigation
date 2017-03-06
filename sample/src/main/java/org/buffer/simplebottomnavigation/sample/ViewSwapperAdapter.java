@@ -19,11 +19,11 @@ public class ViewSwapperAdapter extends FragmentStateAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case INDEX_CAT:
-                return ImageFragment.newInstance(R.drawable.cat);
-            case INDEX_BUFFER:
                 return ImageFragment.newInstance(R.drawable.buffer);
+            case INDEX_BUFFER:
+                return ImageFragment.newInstance(R.drawable.retreat);
             case INDEX_ANDROID:
-                return ImageFragment.newInstance(R.drawable.android);
+                return ImageFragment.newInstance(R.drawable.values);
         }
         return null;
     }
