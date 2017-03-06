@@ -7,9 +7,9 @@ import org.buffer.simplebottomnavigation.adapter.FragmentStateAdapter;
 
 public class ViewSwapperAdapter extends FragmentStateAdapter {
 
-    private static final int INDEX_CAT = 0;
-    private static final int INDEX_BUFFER = 1;
-    private static final int INDEX_ANDROID = 2;
+    private static final int INDEX_BUFFER = 0;
+    private static final int INDEX_RETREAT = 1;
+    private static final int INDEX_VALUES = 2;
 
     public ViewSwapperAdapter(FragmentManager fm) {
         super(fm);
@@ -18,11 +18,11 @@ public class ViewSwapperAdapter extends FragmentStateAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case INDEX_CAT:
-                return ImageFragment.newInstance(R.drawable.buffer);
             case INDEX_BUFFER:
+                return ImageFragment.newInstance(R.drawable.buffer);
+            case INDEX_RETREAT:
                 return ImageFragment.newInstance(R.drawable.retreat);
-            case INDEX_ANDROID:
+            case INDEX_VALUES:
                 return ImageFragment.newInstance(R.drawable.values);
         }
         return null;
