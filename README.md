@@ -1,7 +1,9 @@
 Simple Bottom Navigation
 -------------------------
 
-![Demo](/art/demo.gif)
+<p align="center">
+<img src="/art/demo.gif">
+</p>
 
 When using the Bottom Navigation View from the Android Support Library, there can be a lot of boilerplate code for the switching of views. Because of this, we took inspiration from the TabLayout setupWithViewPager() method and created a custom ViewSwapper component that can be attached to a Bottom Navigation View to simplify the management of view display. Within this library are three core components that you'll need to use:
 
