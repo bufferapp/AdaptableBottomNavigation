@@ -17,7 +17,7 @@ When using a TabLayout within your application, using a ViewPager along with an 
 This is great as it allows you to decouple this presentation logic from your activities or other classes. However, when it comes to implementing the BottomNavigationView from the design support library, we're not blessed with the same niceties. This requires your activity (or fragment) that is hosting the BottomNavigationView to house the logic used for the handling of such events. We can't use the ViewPager for Bottom Navigation as the way the view works breaks the design guidelines - so we created this library here to allow you to easily create an adapter for use with Bottom Navigation so that you can work with the view in a way in which you are familiar with when it comes to the ViewPager. This setup looks a little like this:
 
 <p align="center">
-<img src="/art/view_pager.png">
+<img src="/art/view_swapper.png">
 </p>
 
 # So, what is this library?
