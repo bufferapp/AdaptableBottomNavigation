@@ -16,7 +16,7 @@ When using the Bottom Navigation View from the Android Support Library, there ca
 In order to use this ViewSwapper component you need to use our SimpleBottomNavigationView - this is simply an extension of the support library component with the added functionality of ViewSwapper attachment and elevation. This will look like so in your layout file:
 
 ```xml
-<org.buffer.simplebottomnavigation.ViewSwapper
+<org.buffer.adaptablebottomnavigation.view.ViewSwapper
         android:id="@+id/view_swapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

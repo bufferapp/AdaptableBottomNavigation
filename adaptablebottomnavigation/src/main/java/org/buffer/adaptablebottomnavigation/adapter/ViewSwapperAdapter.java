@@ -1,4 +1,4 @@
-package org.buffer.simplebottomnavigation.adapter;
+package org.buffer.adaptablebottomnavigation.adapter;
 
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.buffer.simplebottomnavigation.ViewSwapper;
+import org.buffer.adaptablebottomnavigation.view.ViewSwapper;
 
 /**
  * Base class providing the adapter to populate pages inside of

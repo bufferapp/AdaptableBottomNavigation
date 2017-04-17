@@ -1,4 +1,4 @@
-package org.buffer.simplebottomnavigation.adapter;
+package org.buffer.adaptablebottomnavigation.adapter;
 
 import android.os.Bundle;
 import android.os.Parcelable;

@@ -1,4 +1,4 @@
-package org.buffer.simplebottomnavigation.adapter;
+package org.buffer.adaptablebottomnavigation.adapter;
 
 /*
  * Copyright (C) 2011 The Android Open Source Project

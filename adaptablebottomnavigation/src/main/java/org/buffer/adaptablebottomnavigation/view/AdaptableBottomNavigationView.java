@@ -1,11 +1,6 @@
-package org.buffer.simplebottomnavigation;
+package org.buffer.adaptablebottomnavigation.view;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -16,48 +11,22 @@ import android.support.v4.os.ParcelableCompatCreatorCallbacks;
 import android.util.AttributeSet;
 import android.view.MenuItem;
 
-import static org.buffer.simplebottomnavigation.DIsplayMetricsUtil.convertDpToPixel;
-
-public class SimpleBottomNavigationView extends BottomNavigationView {
+public class AdaptableBottomNavigationView extends BottomNavigationView {
 
     private BottomNavigationView.OnNavigationItemSelectedListener viewChangeListener;
     private ViewSwapperOnItemSelectedListener currentViewSwapperSelectedListener;
-    private Drawable shadowDrawable;
     private int selectedPosition;
 
-    private float topPadding;
-
-    public SimpleBottomNavigationView(Context context) {
+    public AdaptableBottomNavigationView(Context context) {
         super(context);
     }
 
-    public SimpleBottomNavigationView(Context context, AttributeSet attrs) {
+    public AdaptableBottomNavigationView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        init(context);
-        parseAttributes(context, attrs);
     }
 
-    public SimpleBottomNavigationView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AdaptableBottomNavigationView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-        init(context);
-        parseAttributes(context, attrs);
-    }
-
-    @Override
-    protected void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-
-        if (shadowDrawable != null) {
-            Rect newRect = canvas.getClipBounds();
-            newRect.inset(0, (int) -topPadding);
-            canvas.clipRect(newRect, Region.Op.REPLACE);
-
-            shadowDrawable.setBounds(0, (int) (0 - topPadding), getRight(), 0);
-            shadowDrawable.draw(canvas);
-        }
-
     }
 
     @Override
@@ -96,21 +65,6 @@ public class SimpleBottomNavigationView extends BottomNavigationView {
         }
     }
 
-    private void init(Context context) {
-        topPadding = convertDpToPixel(3, context);
-        setPadding(0, (int) topPadding, 0, 0);
-        setWillNotDraw(false);
-    }
-
-    private void parseAttributes(Context context, AttributeSet attrs) {
-        TypedArray ta = context.obtainStyledAttributes(attrs,
-                R.styleable.SimpleBottomNavigationView, 0, 0);
-        if (ta.getBoolean(R.styleable.SimpleBottomNavigationView_showShadow, false)) {
-            shadowDrawable = getContext().getResources().getDrawable(R.drawable.above_shadow);
-        }
-        ta.recycle();
-    }
-
     public class ViewSwapperOnItemSelectedListener implements
             BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -122,8 +76,8 @@ public class SimpleBottomNavigationView extends BottomNavigationView {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            for (int i = 0; i < SimpleBottomNavigationView.this.getMenu().size(); i++) {
-                if (SimpleBottomNavigationView.this.getMenu().getItem(i).getItemId() ==
+            for (int i = 0; i < AdaptableBottomNavigationView.this.getMenu().size(); i++) {
+                if (AdaptableBottomNavigationView.this.getMenu().getItem(i).getItemId() ==
                         item.getItemId()) {
                     selectedPosition = i;
                     viewSwapper.showItemAt(selectedPosition);

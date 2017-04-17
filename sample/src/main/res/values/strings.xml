@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleBottomNavigation</string>
+    <string name="app_name">AdaptableBottomNavigation</string>
 
     <string name="menu_one">One</string>
     <string name="menu_two">Two</string>

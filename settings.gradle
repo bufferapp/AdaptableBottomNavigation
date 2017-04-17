@@ -1,1 +1,1 @@
-include ':sample', ':simplebottomnavigation'
+include ':sample', ':adaptablebottomnavigation'

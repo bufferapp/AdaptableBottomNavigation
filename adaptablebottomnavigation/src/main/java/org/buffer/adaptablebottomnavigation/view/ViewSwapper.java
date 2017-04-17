@@ -1,4 +1,4 @@
-package org.buffer.simplebottomnavigation;
+package org.buffer.adaptablebottomnavigation.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -11,7 +11,8 @@ import android.support.v4.os.ParcelableCompatCreatorCallbacks;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import org.buffer.simplebottomnavigation.adapter.ViewSwapperAdapter;
+import org.buffer.adaptablebottomnavigation.model.ItemInfo;
+import org.buffer.adaptablebottomnavigation.adapter.ViewSwapperAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;

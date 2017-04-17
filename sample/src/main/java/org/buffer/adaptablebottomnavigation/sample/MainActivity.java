@@ -1,14 +1,15 @@
-package org.buffer.simplebottomnavigation.sample;
+package org.buffer.adaptablebottomnavigation.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import org.buffer.simplebottomnavigation.SimpleBottomNavigationView;
-import org.buffer.simplebottomnavigation.ViewSwapper;
+import org.buffer.adaptablebottomnavigation.view.AdaptableBottomNavigationView;
+import org.buffer.adaptablebottomnavigation.view.ViewSwapper;
+import org.buffer.simplebottomnavigation.sample.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SimpleBottomNavigationView bottomNavigationView;
+    private AdaptableBottomNavigationView bottomNavigationView;
     private ViewSwapperAdapter viewSwapperAdapter;
     private ViewSwapper viewSwapper;
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = (SimpleBottomNavigationView)
+        bottomNavigationView = (AdaptableBottomNavigationView)
                 findViewById(R.id.view_bottom_navigation);
         viewSwapper = (ViewSwapper) findViewById(R.id.view_swapper);
         viewSwapperAdapter = new ViewSwapperAdapter(getSupportFragmentManager());

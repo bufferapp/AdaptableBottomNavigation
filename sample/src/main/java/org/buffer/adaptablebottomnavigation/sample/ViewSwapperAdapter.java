@@ -1,9 +1,10 @@
-package org.buffer.simplebottomnavigation.sample;
+package org.buffer.adaptablebottomnavigation.sample;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-import org.buffer.simplebottomnavigation.adapter.FragmentStateAdapter;
+import org.buffer.adaptablebottomnavigation.adapter.FragmentStateAdapter;
+import org.buffer.simplebottomnavigation.sample.R;
 
 public class ViewSwapperAdapter extends FragmentStateAdapter {
 

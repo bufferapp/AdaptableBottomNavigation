@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <org.buffer.simplebottomnavigation.ViewSwapper
+    <org.buffer.adaptablebottomnavigation.view.ViewSwapper
         android:id="@+id/view_swapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/view_bottom_navigation" />
 
-    <org.buffer.simplebottomnavigation.SimpleBottomNavigationView
+    <org.buffer.adaptablebottomnavigation.view.AdaptableBottomNavigationView
         android:id="@+id/view_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,6 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/selector_menu"
         app:itemTextColor="@drawable/selector_menu"
-        app:menu="@menu/main"
-        app:showShadow="true" />
+        app:menu="@menu/main" />
 
 </RelativeLayout>

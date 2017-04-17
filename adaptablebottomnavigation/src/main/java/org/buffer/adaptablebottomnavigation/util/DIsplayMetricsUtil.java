@@ -1,4 +1,4 @@
-package org.buffer.simplebottomnavigation;
+package org.buffer.adaptablebottomnavigation.util;
 
 import android.content.Context;
 import android.content.res.Resources;
