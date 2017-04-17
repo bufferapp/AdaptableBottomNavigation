@@ -5,9 +5,26 @@ Simple Bottom Navigation
 <img src="/art/demo.gif">
 </p>
 
-When using the Bottom Navigation View from the Android Support Library, there can be a lot of boilerplate code for the switching of views. Because of this, we took inspiration from the TabLayout setupWithViewPager() method and created a custom ViewSwapper component that can be attached to a Bottom Navigation View to simplify the management of view display. Within this library are three core components that you'll need to use:
 
-- SimpleBottomNavigationView - The Bottom Navigation View for displaying navigation items in a bar at the bottom of the screen.  This view extends the BottomNavigationView from the Design Support Library, so the two classes are easily interchangable in your projects.
+# Motivation
+
+When using a TabLayout within your application, using a ViewPager along with an adapter offers an easy way to quickly link up your views for display. The FragmentAdapter class takes care of all the hard work for you when it comes to switching between the views as the user selected a different item in the TabLayout. This process is made up something a little like this:
+
+<p align="center">
+<img src="/art/view_pager.png">
+</p>
+
+This is great as it allows you to decouple this presentation logic from your activities or other classes. However, when it comes to implementing the BottomNavigationView from the design support library, we're not blessed with the same niceties. This requires your activity (or fragment) that is hosting the BottomNavigationView to house the logic used for the handling of such events. We can't use the ViewPager for Bottom Navigation as the way the view works breaks the design guidelines - so we created this library here to allow you to easily create an adapter for use with Bottom Navigation so that you can work with the view in a way in which you are familiar with when it comes to the ViewPager. This setup looks a little like this:
+
+<p align="center">
+<img src="/art/view_pager.png">
+</p>
+
+# So, what is this library?
+
+As mentioned, when using the Bottom Navigation View from the Android Support Library, there can be a lot of boilerplate code for the switching of views. Because of this, we took inspiration from the TabLayout setupWithViewPager() method and created a custom ViewSwapper component that can be attached to a Bottom Navigation View to simplify the management of view display. Within this library are three core components that you'll need to use:
+
+- AdaptableBottomNavigationView - The Bottom Navigation View for displaying navigation items in a bar at the bottom of the screen.  This view extends the BottomNavigationView from the Design Support Library, so the two classes are easily interchangable in your projects.
 
 - ViewSwapper - The View Swapper is used to easily switch between fragments that you wish to display to the user. Unlike the View pager, views will not transition between pages and swiping is not possible - hence adhering to the Design Principles for the Bottom Navigation View.
 
@@ -24,7 +41,7 @@ In order to use this ViewSwapper component you need to use our SimpleBottomNavig
         android:layout_height="match_parent"
         android:layout_above="@+id/view_bottom_navigation" />
 
-<org.buffer.simplebottomnavigation.SimpleBottomNavigationView
+<org.buffer.adaptablebottomnavigation.AdaptableBottomNavigationView
     android:id="@+id/view_bottom_navigation"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -33,11 +50,10 @@ In order to use this ViewSwapper component you need to use our SimpleBottomNavig
     app:itemBackground="@color/colorPrimary"
     app:itemIconTint="@drawable/selector_menu"
     app:itemTextColor="@drawable/selector_menu"
-    app:menu="@menu/main"
-    app:showShadow="true" />
+    app:menu="@menu/main" />
 ```
 
-Next, you'll need to crate an adapter using either the FragmentStateAdapter or FragmentAdapter classes from the library. These are the essentially the same as the corresponding adapter classes found in the Android Framework. This could look something like so:
+Next, you'll need to create an adapter using either the FragmentStateAdapter or FragmentAdapter classes from the library. These are the essentially the same as the corresponding adapter classes found in the Android Framework. This could look something like so:
 
 ```java
 
@@ -79,12 +95,3 @@ e.g.
 viewSwapper.setAdapter(viewSwapperAdapter);
 bottomNavigationView.setupWithViewSwapper(viewSwapper);
 ```
-
-# Adding elevation
-
-We've added an attribute to easily add elevation to the bottom navigtion view, we can apply this attribute to our SimpleBottomNavigationView like so:
-
-```xml
-app:showShadow="true"
-```
-
