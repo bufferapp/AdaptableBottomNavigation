@@ -30,16 +30,24 @@ As mentioned, when using the Bottom Navigation View from the Android Support Lib
 
 - FragmentStateAdapter / FragmentAdapter - An abstract adapter that allows you to create an adapter for displaying fragments within the ViewSwapper. These classes are the same as the implementations found within the Android Framework, agan with a few tweaks to better match the behaviour of the View Swapper component.
 
+# But how's it different from using a ViewPager?
+
+In the library you'll notice the ViewSwapper component. This is similar to the ViewPager except it has a view differences:
+
+- Unlike the viewpager, it doesn't draw all views within the component at once. The Views are simply added and removed as the item to be displayed has been selected
+
+- The ViewSwapper *doesn't* allow swiping between views - this allows us to adhere to the guidelines for not allowing the Bottom Navigation to be interacted with in this way
+
 # How to use
 
 In order to use this ViewSwapper component you need to use our SimpleBottomNavigationView - this is simply an extension of the support library component with the added functionality of ViewSwapper attachment and elevation. This will look like so in your layout file:
 
 ```xml
 <org.buffer.adaptablebottomnavigation.view.ViewSwapper
-        android:id="@+id/view_swapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/view_bottom_navigation" />
+    android:id="@+id/view_swapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/view_bottom_navigation" />
 
 <org.buffer.adaptablebottomnavigation.AdaptableBottomNavigationView
     android:id="@+id/view_bottom_navigation"
