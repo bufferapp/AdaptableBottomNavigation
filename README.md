@@ -38,6 +38,8 @@ In the library you'll notice the ViewSwapper component. This is similar to the V
 
 - The ViewSwapper *doesn't* allow swiping between views - this allows us to adhere to the guidelines for not allowing the Bottom Navigation to be interacted with in this way
 
+- Re-showing the item that is already in view will force a refresh of the views contents. So just like the guidelines state for the Bottom Navigation View, reselecting a navigaton item will reload the contents of the currently displayed item.
+
 # How to use
 
 In order to use this ViewSwapper component you need to use our SimpleBottomNavigationView - this is simply an extension of the support library component with the added functionality of ViewSwapper attachment and elevation. This will look like so in your layout file:
