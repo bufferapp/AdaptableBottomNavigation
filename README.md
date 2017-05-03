@@ -24,11 +24,11 @@ This is great as it allows you to decouple this presentation logic from your act
 
 As mentioned, when using the Bottom Navigation View from the Android Support Library, there can be a lot of boilerplate code for the switching of views. Because of this, we took inspiration from the TabLayout setupWithViewPager() method and created a custom ViewSwapper component that can be attached to a Bottom Navigation View to simplify the management of view display. Within this library are three core components that you'll need to use:
 
-- AdaptableBottomNavigationView - The Bottom Navigation View for displaying navigation items in a bar at the bottom of the screen.  This view extends the BottomNavigationView from the Design Support Library, so the two classes are easily interchangable in your projects.
+- **AdaptableBottomNavigationView** - The Bottom Navigation View for displaying navigation items in a bar at the bottom of the screen.  This view extends the BottomNavigationView from the Design Support Library, so the two classes are easily interchangable in your projects.
 
-- ViewSwapper - The View Swapper is used to easily switch between fragments that you wish to display to the user. Unlike the View pager, views will not transition between pages and swiping is not possible - hence adhering to the Design Principles for the Bottom Navigation View.
+- **ViewSwapper** - The View Swapper is used to easily switch between fragments that you wish to display to the user. Unlike the View pager, views will not transition between pages and swiping is not possible - hence adhering to the Design Principles for the Bottom Navigation View.
 
-- FragmentStateAdapter / FragmentAdapter - An abstract adapter that allows you to create an adapter for displaying fragments within the ViewSwapper. These classes are the same as the implementations found within the Android Framework, agan with a few tweaks to better match the behaviour of the View Swapper component.
+- **FragmentStateAdapter / FragmentAdapter** - An abstract adapter that allows you to create an adapter for displaying fragments within the ViewSwapper. These classes are the same as the implementations found within the Android Framework, agan with a few tweaks to better match the behaviour of the View Swapper component.
 
 # But how's it different from using a ViewPager?
 
