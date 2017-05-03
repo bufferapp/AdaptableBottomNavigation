@@ -26,7 +26,7 @@ As mentioned, when using the Bottom Navigation View from the Android Support Lib
 
 - **AdaptableBottomNavigationView** - The Bottom Navigation View for displaying navigation items in a bar at the bottom of the screen.  This view extends the BottomNavigationView from the Design Support Library, so the two classes are easily interchangable in your projects.
 
-- **ViewSwapper** - The View Swapper is used to easily switch between fragments that you wish to display to the user. Unlike the View pager, views will not transition between pages and swiping is not possible - hence adhering to the Design Principles for the Bottom Navigation View.
+- **ViewSwapper** - The View Swapper is used to easily switch between fragments that you wish to display to the user. Unlike the View pager, views will not transition between pages and swiping is not possible - hence adhering to the Design Principles for the Bottom Navigation View. This view is essentially a tweaked version of the ViewPager component that you're probably familiar with already!
 
 - **FragmentStateAdapter / FragmentAdapter** - An abstract adapter that allows you to create an adapter for displaying fragments within the ViewSwapper. These classes are the same as the implementations found within the Android Framework, agan with a few tweaks to better match the behaviour of the View Swapper component.
 
@@ -37,8 +37,6 @@ In the library you'll notice the ViewSwapper component. This is similar to the V
 - Unlike the viewpager, it doesn't draw all views within the component at once. The Views are simply added and removed as the item to be displayed has been selected
 
 - The ViewSwapper *doesn't* allow swiping between views - this allows us to adhere to the guidelines for not allowing the Bottom Navigation to be interacted with in this way
-
-- Re-showing the item that is already in view will force a refresh of the views contents. So just like the guidelines state for the Bottom Navigation View, reselecting a navigaton item will reload the contents of the currently displayed item.
 
 # How to use
 
