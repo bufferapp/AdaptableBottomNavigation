@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import org.buffer.adaptablebottomnavigation.view.AdaptableBottomNavigationView;
 import org.buffer.adaptablebottomnavigation.view.ViewSwapper;
-import org.buffer.simplebottomnavigation.sample.R;
 
 public class MainActivity extends AppCompatActivity {
 

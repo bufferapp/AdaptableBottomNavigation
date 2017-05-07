@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import org.buffer.adaptablebottomnavigation.adapter.FragmentStateAdapter;
-import org.buffer.simplebottomnavigation.sample.R;
 
 public class ViewSwapperAdapter extends FragmentStateAdapter {
 
