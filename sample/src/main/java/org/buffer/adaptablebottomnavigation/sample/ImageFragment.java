@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import org.buffer.simplebottomnavigation.sample.R;
 
 public class ImageFragment extends Fragment {
 
