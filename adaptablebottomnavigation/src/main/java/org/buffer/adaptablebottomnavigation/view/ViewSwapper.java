@@ -245,7 +245,6 @@ public class ViewSwapper extends FrameLayout {
                     isUpdating = true;
                 }
                 adapter.destroyItem(this, ii.position, ii.object);
-                needPopulate = true;
                 if (currentItem == ii.position) {
                     newCurrItem = Math.max(0, Math.min(currentItem, adapter.getCount() - 1));
                     needPopulate = true;
