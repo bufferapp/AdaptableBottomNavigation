@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.os.ParcelableCompat;
 import android.support.v4.os.ParcelableCompatCreatorCallbacks;
+import android.support.v4.view.AbsSavedState;
 import android.util.AttributeSet;
 import android.view.MenuItem;
 
@@ -91,51 +92,45 @@ public class AdaptableBottomNavigationView extends BottomNavigationView {
         }
     }
 
-    public static class SavedState extends BaseSavedState {
+    public static class SavedState extends AbsSavedState {
         int position;
-        Parcelable viewState;
         ClassLoader loader;
 
         public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        SavedState(Parcel in, ClassLoader loader) {
+            super(in, loader);
+            position = in.readInt();
+            this.loader = loader;
+        }
+
         @Override
         public void writeToParcel(Parcel out, int flags) {
             super.writeToParcel(out, flags);
             out.writeInt(position);
-            out.writeParcelable(viewState, flags);
         }
 
         @Override
         public String toString() {
-            return "ViewSwapper.SavedState{"
+            return "AdaptableBottomNavigationView.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " position=" + position + "}";
         }
 
-        public static final Creator<ViewSwapper.SavedState> CREATOR
-                = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<ViewSwapper.SavedState>() {
+        public static final Creator<SavedState> CREATOR
+                = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
             @Override
-            public ViewSwapper.SavedState createFromParcel(Parcel in, ClassLoader loader) {
-                return new ViewSwapper.SavedState(in, loader);
+            public SavedState createFromParcel(Parcel in, ClassLoader loader) {
+                return new SavedState(in, loader);
             }
 
             @Override
-            public ViewSwapper.SavedState[] newArray(int size) {
-                return new ViewSwapper.SavedState[size];
+            public SavedState[] newArray(int size) {
+                return new SavedState[size];
             }
         });
-
-        SavedState(Parcel in, ClassLoader loader) {
-            super(in);
-            if (loader == null) {
-                loader = getClass().getClassLoader();
-            }
-            position = in.readInt();
-            viewState = in.readParcelable(loader);
-            this.loader = loader;
-        }
     }
 
 }
