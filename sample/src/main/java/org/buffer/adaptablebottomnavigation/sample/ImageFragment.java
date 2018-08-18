@@ -34,7 +34,7 @@ public class ImageFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_image, container, false);
 
-        ImageView iconImage = (ImageView) fragmentView.findViewById(R.id.image_icon);
+        ImageView iconImage = fragmentView.findViewById(R.id.image_icon);
         iconImage.setImageResource(imageRes);
 
         return fragmentView;
