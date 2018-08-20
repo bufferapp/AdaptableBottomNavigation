@@ -180,6 +180,7 @@ public class AdaptableBottomNavigationView extends BottomNavigationView
         SavedState(Parcel in, ClassLoader loader)
         {
             super(in);
+            this.superState = in.readParcelable(getClass().getClassLoader());
             if (loader == null)
             {
                 loader = getClass().getClassLoader();

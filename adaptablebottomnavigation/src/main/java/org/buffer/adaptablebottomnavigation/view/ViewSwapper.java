@@ -227,6 +227,7 @@ public class ViewSwapper extends FrameLayout
         SavedState(Parcel in, ClassLoader loader)
         {
             super(in, loader);
+            this.superState = in.readParcelable(getClass().getClassLoader());
             if (loader == null)
             {
                 loader = getClass().getClassLoader();
