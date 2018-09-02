@@ -141,7 +141,7 @@ public class AdaptableBottomNavigationView extends BottomNavigationView
             }
         };
 
-        SavedState(Parcel in) {
+        SavedState(Parcel in, ClassLoader loader) {
             super(in);
             this.superState = in.readParcelable(getClass().getClassLoader());
             if (loader == null) {
@@ -152,7 +152,7 @@ public class AdaptableBottomNavigationView extends BottomNavigationView
             this.loader = loader;
         }
 
-        SavedState(Parcel in, ClassLoader loader) {
+        SavedState(Parcel in) {
             super(in);
             this.superState = in.readParcelable(getClass().getClassLoader());
             if (loader == null) {
@@ -160,7 +160,6 @@ public class AdaptableBottomNavigationView extends BottomNavigationView
             }
             position = in.readInt();
             viewState = in.readParcelable(loader);
-            this.loader = loader;
         }
     }
 }

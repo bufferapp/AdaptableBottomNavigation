@@ -212,7 +212,6 @@ public class ViewSwapper extends FrameLayout
             }
             position = in.readInt();
             adapterState = in.readParcelable(loader);
-            this.loader = loader;
         }
     }
 
